@@ -175,5 +175,15 @@ body {
 @media screen and (max-width: 900px) {
     #maps {
         overflow-y: scroll;
-    }    
+    }   
+    
+    .start, .endbutton, #username {
+        padding: 10px 20px;
+        width: 250px;
+    }
+
+    .map-button {
+        flex-grow: 1;
+        height: 150px;
+    }
 }
