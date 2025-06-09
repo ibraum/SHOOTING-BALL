@@ -1,7 +1,7 @@
 const maps = document.getElementById('maps');
 const body = document.querySelector('body');
 
-body.style.backgroundImage = localStorage.getItem('map') ? `url("./assets/levels/${localStorage.getItem('map')}")` : `url("./assets/levels/l4.jpg")`;
+body.style.backgroundImage = localStorage.getItem('map') ? `url("./assets/levels/${localStorage.getItem('map')}")` : `url("./assets/levels/l9.jpg")`;
 
 for (i = 1; i < 13; i ++)
 {
