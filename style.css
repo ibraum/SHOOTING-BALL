@@ -175,6 +175,9 @@ body {
 @media screen and (max-width: 900px) {
     #maps {
         overflow-y: scroll;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 20px;
     }   
     
     .start, .endbutton, #username {
