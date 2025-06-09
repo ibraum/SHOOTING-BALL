@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BALLS SHOOTING</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <script src="script.js" defer></script>
-    <script src="load-maps.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BALLS SHOOTING</title>
+  <meta name="description" content="Un mini-jeu de tir dynamique en HTML5 Canvas. Visez juste, survivez et pulvérisez vos ennemis ! 🎯🔥">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script src="load-maps.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <meta property="og:title" content="BALLS SHOOTING – HTML5 Canvas Game" />
+  <meta property="og:description" content="Un mini-jeu de tir fun, rapide et explosif en JavaScript. Teste tes réflexes dès maintenant !" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://votre-site.com" /> <!-- 🔁 À adapter -->
+  <meta property="og:image" content="https://votre-site.com/assets/previews/p1.png" /> <!-- 🔁 1200x630px -->
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="BALLS SHOOTING" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BALLS SHOOTING – HTML5 Canvas Game" />
+  <meta name="twitter:description" content="Un jeu JavaScript explosif ! Shoote, esquive, survis." />
+  <meta name="twitter:image" content="https://votre-site.com/assets/preview.png" />
+  <meta name="twitter:url" content="https://votre-site.com" />
+
+  <!-- Telegram (utilise OG + bonus) -->
+  <meta name="telegram:channel" content="@TonCanalTelegram"> <!-- Facultatif -->
+
 </head>
+
 <body>
     <div class="score">
         Score : <span id="points">0</span>
