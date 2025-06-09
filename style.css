@@ -78,8 +78,8 @@ body {
     width: 400px;
     background-color: transparent;
     border-radius: 35px;
-    border: 4px solid white;
-    color: white;
+    border: 4px solid black;
+    color: black;
     font-size: 1.2rem;
     letter-spacing: 5px;
 }
@@ -173,6 +173,10 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+    body {
+        padding: 0;
+    }
+    
     #maps {
         overflow-y: scroll;
         width: 100%;
@@ -181,8 +185,8 @@ body {
     }   
     
     .start, .endbutton, #username {
-        padding: 10px 20px;
-        width: 250px;
+        padding: 15px 40px;
+        width: 275px;
     }
 
     .map-button {
