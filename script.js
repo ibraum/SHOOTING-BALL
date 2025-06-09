@@ -227,11 +227,6 @@ function spawnEnemies () {
     }, 1000);
 }
 
-// animate();
-// spawnEnemies();
-// ctx.fillRect(canvas.width / 2, canvas.height / 2, 25, 25);
-// Math.
-
 function startGame(e) {
     e.preventDefault();
     localStorage.setItem('username', username.value);
