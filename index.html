@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALLS SHOOTING</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+    <script src="load-maps.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="score">
+        Score : <span id="points">0</span>
+    </div>
+    <canvas id="screen"></canvas>
+    <div class="blur"></div>
+    <div class="username"></div>
+    <div class="preferences" id="preferences">
+        <div class="logo"><img src="assets/logo.png" alt="" style="width: 200px;"></div>
+        <form onsubmit="startGame(event)" style="display: flex; flex-direction: column; gap: 30px">
+            <input type="text" name="" id="username" placeholder="nom d'utilisateur" autofocus required>
+            <input type="submit" name="" class="start" value="JOUER">
+        </form>
+        <div id="maps">
+
+        </div>
+    </div>
+    <div class="end" id="end">
+        <div class="usernamewin" id="usernamewin">RAOUL</div>
+        <div class="scorelabelwin">ton score</div>
+        <div class="scorewin" id="scorewin">0</div>
+        <form onsubmit="startGame(event)" style="display: flex; flex-direction: column; gap: 30px">
+            <input type="submit" name="" class="start" value="REJOUER">
+        </form>
+        <form onsubmit="goHome(event)" style="display: flex; flex-direction: column; gap: 30px">
+            <input type="submit" name="" class="endbutton" value="ACCEUIL">
+        </form>
+    </div>
+</body>
+</html>

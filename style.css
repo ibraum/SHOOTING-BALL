@@ -1,0 +1,179 @@
+:root {
+    --color-dark: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 0;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/levels/l1.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#screen {
+    background-color: transparent;
+    border-radius: 2.5px;
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/levels/l1.jpg"); */
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* .blur {
+    backdrop-filter: blur(1px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+} */
+
+.score {
+    position: absolute;
+    top: 10px;
+    margin: 0 auto;
+    width: 250px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    border: 4px solid rgb(255, 255, 255);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    backdrop-filter: blur(2px);
+}
+
+/* //preferences */
+
+.preferences {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+#username {
+    padding: 20px 40px;
+    width: 400px;
+    background-color: transparent;
+    border-radius: 35px;
+    border: 4px solid white;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+}
+
+.start, .endbutton {
+    padding: 20px 40px;
+    width: 400px;
+    border-radius: 35px;
+    border: 4px solid black;
+    color: black;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+
+.start {
+    background-color: orange;
+}
+
+.endbutton {
+    background-color: white;
+}
+
+#username::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.2rem;
+}
+
+/* Maps */
+
+#maps {
+    max-width: 90%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+}
+
+.map-button {
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all .2s .1s ease-in-out;
+}
+
+.map-button:hover {
+    transform: scale(1.1);
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+.map img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.end {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.usernamewin {
+    font-size: 2.5rem;
+}
+
+.scorelabelwin {
+    font-size: 1.2rem;
+    text-transform: capitalize;    
+}
+
+.scorewin {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+    #maps {
+        overflow-y: scroll;
+    }    
+}
