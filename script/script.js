@@ -10,9 +10,12 @@ let username = document.getElementById('username');
 let scorewin = document.getElementById('scorewin');
 let points = 0;
 let animationId;
+let shootOnMove = false;
 let movePlayerAnimation; 
 let mouseX = canvas.width / 2;
 let mouseY = canvas.height / 2; 
+let moveX;
+let moveY; 
 
 let projectiles = [];
 let enemies = [];
@@ -143,12 +146,17 @@ const player = new Player(canvas.width / 2, canvas.height / 2, 30, 'white');
 player.draw()
 
 window.addEventListener('click', (e) => {
-    const angle = Math.atan2(e.clientY - (canvas.height / 2), e.clientX - (canvas.width / 2));
+    const angle = Math.atan2(e.clientY - player.y, e.clientX - player.x);
     const velocity = {
         x: Math.cos(angle) * 6,
         y: Math.sin(angle) * 6
     };
-    projectiles.push(new Projectile(mouseX, mouseY, 10, 'orange', velocity));
+    
+    if (shootOnMove) {
+        projectiles.push(new Projectile(player.x, player.y, 10, 'orange', velocity));
+    } else {
+        projectiles.push(new Projectile(mouseX, mouseY, 10, 'orange', velocity));
+    }
 });
 
 function animate () {
@@ -263,12 +271,13 @@ function movePlayer() {
     let distance = Math.hypot(dx, dy);
 
     if (distance <= 1) {
+        shootOnMove = false;
         return;
     }
 
     let speed = 4;
-    let moveX = (dx / distance) * speed;
-    let moveY = (dy / distance) * speed;
+    moveX = (dx / distance) * speed;
+    moveY = (dy / distance) * speed;
 
     player.x += moveX;
     player.y += moveY;
@@ -279,6 +288,7 @@ function movePlayer() {
 
 
 window.addEventListener('auxclick', (e) => {
+    shootOnMove = true;
     mouseX = e.clientX;
     mouseY = e.clientY;
     movePlayer();
