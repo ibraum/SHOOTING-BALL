@@ -152,11 +152,7 @@ window.addEventListener('click', (e) => {
         y: Math.sin(angle) * 6
     };
     
-    if (shootOnMove) {
-        projectiles.push(new Projectile(player.x, player.y, 10, 'orange', velocity));
-    } else {
-        projectiles.push(new Projectile(mouseX, mouseY, 10, 'orange', velocity));
-    }
+    projectiles.push(new Projectile(player.x, player.y, 5, 'orange', velocity));
 });
 
 function animate () {
@@ -229,11 +225,11 @@ function spawnEnemies () {
     setInterval(() => {
         const x = Math.random() < 0.5 ? - 5 : canvas.width * (Math.random() + 1);
         const y = Math.random() < 0.5 ? - 5 : canvas.height * (Math.random() + 1);
-        const radius = Math.random() * 30 + 20;
+        const radius = Math.ceil(Math.random() * 30) + 20;
         const angle = Math.atan2((canvas.height / 2) - y, (canvas.width / 2) - x);
         const velocity = {
-            x: Math.cos(angle) * 1.2,
-            y: Math.sin(angle) * 1.2
+            x: Math.cos(angle) * 1,
+            y: Math.sin(angle) * 1
         };
         const color = `hsl(${Math.random() * 360}, 50%, 50%)`;
         enemies.push(new Enemie(x, y, radius, color, velocity));
