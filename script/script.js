@@ -1,3 +1,8 @@
+var canvas = document.getElementById("screen");
+var ctx = canvas.getContext("2d");
+
+document.addEventListener('contextmenu', (e) => {e.preventDefault();});
+
 let preferences = document.getElementById('preferences');
 let end = document.getElementById('end');
 let score = document.getElementById('points');
@@ -5,13 +10,13 @@ let username = document.getElementById('username');
 let scorewin = document.getElementById('scorewin');
 let points = 0;
 let animationId;
+let movePlayerAnimation; 
+let mouseX = canvas.width / 2;
+let mouseY = canvas.height / 2; 
 
 let projectiles = [];
 let enemies = [];
 let particules = [];
-
-var canvas = document.getElementById("screen");
-var ctx = canvas.getContext("2d");
 
 const dpr = window.devicePixelRatio || 1;
 const rectWidth = 25;
@@ -143,7 +148,7 @@ window.addEventListener('click', (e) => {
         x: Math.cos(angle) * 6,
         y: Math.sin(angle) * 6
     };
-    projectiles.push(new Projectile(canvas.width / 2, canvas.height / 2, 10, 'orange', velocity));
+    projectiles.push(new Projectile(mouseX, mouseY, 10, 'orange', velocity));
 });
 
 function animate () {
@@ -250,3 +255,31 @@ function goHome(e) {
     e.preventDefault();
     end.style.display = "none";
 }
+
+function movePlayer() {
+    let dx = mouseX - player.x;
+    let dy = mouseY - player.y;
+
+    let distance = Math.hypot(dx, dy);
+
+    if (distance <= 1) {
+        return;
+    }
+
+    let speed = 4;
+    let moveX = (dx / distance) * speed;
+    let moveY = (dy / distance) * speed;
+
+    player.x += moveX;
+    player.y += moveY;
+
+    requestAnimationFrame(movePlayer);
+}
+
+
+
+window.addEventListener('auxclick', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    movePlayer();
+});
