@@ -17,6 +17,7 @@
   <script src="script/script.js" defer></script>
   <script src="script/load-maps.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
   <meta property="og:title" content="BALLS SHOOTING – HTML5 Canvas Game" />
   <meta property="og:description" content="Un mini-jeu de tir fun, rapide et explosif en JavaScript. Teste tes réflexes dès maintenant !" />
@@ -65,6 +66,14 @@
         <form onsubmit="goHome(event)" style="display: flex; flex-direction: column; gap: 30px">
             <input type="submit" name="" class="endbutton" value="ACCEUIL">
         </form>
+    </div>
+    <div class="continueGame" id="continueGameModal">
+        <div id="continueGame">
+            <i class="fi fi-rr-play-alt"></i>
+        </div>
+    </div>
+    <div class="pauseGame" id="pauseGame">
+        <i class="fi fi-rr-pause"></i>
     </div>
 </body>
 </html>

@@ -8,6 +8,9 @@ let end = document.getElementById('end');
 let score = document.getElementById('points');
 let username = document.getElementById('username');
 let scorewin = document.getElementById('scorewin');
+let continueGame = document.getElementById('continueGame');
+let pauseGame = document.getElementById('pauseGame');
+let continueGameModal = document.getElementById('continueGameModal');
 let points = 0;
 let animationId;
 let shootOnMove = false;
@@ -238,6 +241,7 @@ function spawnEnemies () {
 
 function startGame(e) {
     e.preventDefault();
+    pauseGame.style.display = "flex";
     localStorage.setItem('username', username.value);
     projectiles = [];
     enemies = [];
@@ -289,3 +293,18 @@ window.addEventListener('auxclick', (e) => {
     mouseY = e.clientY;
     movePlayer();
 });
+
+function pauseGameFunc () {
+    pauseGame.addEventListener('click', ()  => {
+        continueGameModal.style.display = "flex";
+    });
+}
+
+function continueGameFunc () {
+    continueGame.addEventListener('click', ()  => {
+        continueGameModal.style.display = "none";
+    });
+}
+
+pauseGameFunc();
+continueGameFunc();
