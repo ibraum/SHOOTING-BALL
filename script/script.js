@@ -306,5 +306,7 @@ function continueGameFunc () {
     });
 }
 
+// Control the player
+
 pauseGameFunc();
 continueGameFunc();
