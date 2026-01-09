@@ -293,7 +293,7 @@ window.addEventListener('auxclick', (e) => {
     mouseY = e.clientY;
     movePlayer();
 });
-
+ 
 function pauseGameFunc () {
     pauseGame.addEventListener('click', ()  => {
         continueGameModal.style.display = "flex";
@@ -307,6 +307,25 @@ function continueGameFunc () {
 }
 
 // Control the player
+function controlPlayer () {
+    const moveMarge = 5
+    window.addEventListener('keydown', (e) => {
+        console.log("KEY DOWN : ", e.key)
+        if (e.key == 'q') {
+            player.x -= moveMarge
+        }
+        if (e.key == 'd') {
+            player.x += moveMarge
+        }
+        if (e.key == 'z') {
+            player.y -= moveMarge
+        }
+        if (e.key == 's') {
+            player.y += moveMarge
+        }
+    })
+}
 
 pauseGameFunc();
 continueGameFunc();
+controlPlayer();
