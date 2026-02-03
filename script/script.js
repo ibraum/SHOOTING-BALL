@@ -164,8 +164,6 @@ function animate () {
     player.draw()
     projectiles.forEach((projectile, pIndex) => {
         projectile.update();
-        // console.log("object")
-
         if (projectile.x + projectile.radius < 0 || projectile.x + projectile.radius > canvas.width || projectile.y + projectile.radius < 0 || projectile.y + projectile.radius > canvas.height) {
             setTimeout(() => {
                 projectiles.splice(pIndex, 1);
@@ -236,7 +234,7 @@ function spawnEnemies () {
         };
         const color = `hsl(${Math.random() * 360}, 50%, 50%)`;
         enemies.push(new Enemie(x, y, radius, color, velocity));
-    }, 1000);
+    }, 2000);
 }
 
 function startGame(e) {
@@ -310,7 +308,6 @@ function continueGameFunc () {
 function controlPlayer () {
     const moveMarge = 5
     window.addEventListener('keydown', (e) => {
-        console.log("KEY DOWN : ", e.key)
         if (e.key == 'q') {
             player.x -= moveMarge
         }
